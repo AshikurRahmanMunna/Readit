@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- !! IMPORTANT !! -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <header
+      class="flex bg-gray-200 sticky top-0 z-[9] items-center justify-center h-[60px] px-[10px]"
+    >
+      <button
+        id="show-modal"
+        class="bg-blue-500 flex rounded-[5px] items-center border-[1px] border-blue-500 justify-center h-[40px] w-[40px] text-[28px] text-white mr-[10px]"
+      >
+        <span>+</span>
+      </button>
+      <input
+        type="text"
+        id="search"
+        class="h-[40px] w-full pl-[10px] rounded-[5px] border-[1px] border-gray-300"
+        placeholder="Search"
+      />
+    </header>
+    <main>
+      <p
+        id="no-items"
+        class="font-bold absoulte text-center hidden text-[silver]"
+      >
+        No Items
+      </p>
+      <div id="items"></div>
+    </main>
+
+    <div id="modal">
+      <div class="bg-white px-3 w-full mx-[20px] py-3">
+        <input
+          type="text"
+          id="url"
+          class="block"
+          placeholder="Enter Your URL"
+        />
+        <p id="url-error" class="text-red-500"></p>
+        <button id="add-item">Add Item</button>
+        <button id="close-modal">Cancel</button>
+      </div>
+    </div>
+    <script>
+      // You can also require other files to run in this process
+      require("./app.js");
+    </script>
+  </body>
+</html>

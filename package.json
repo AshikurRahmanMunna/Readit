@@ -1,0 +1,51 @@
+{
+  "name": "Readit",
+  "version": "1.0.0",
+  "description": "Readit, A URL management software that provides various ways to manage and remember necessary URLs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron .",
+    "reset": "git reset --hard",
+    "build": "electron-builder --win zip msi",
+    "win-cert": "electron-builder create-self-signed-cert -p armunna"
+  },
+  "repository": "https://github.com/AshikurRahmanMunna/Readit",
+  "homepage": "https://github.com/AshikurRahmanMunna/Readit",
+  "keywords": [
+    "Readit",
+    "URL Management",
+    "Manage URL"
+  ],
+  "author": "AshikurRahmanMunna",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "electron": "^9.0.0",
+    "electron-builder": "^23.6.0",
+    "nodemon": "^2.0.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
+  "build": {
+    "appId": "com.armunna.readit",
+    "copyright": "Copyright Ameliasoft",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "zip"
+    },
+    "win": {
+      "target": "zip",
+      "certificateFile": "./private/armunna.pfx",
+      "certificatePassword": "",
+      "publisherName": "armunna"
+    },
+    "linux": {
+      "category": "Utility",
+      "icon": "./build/icon.png"
+    }
+  }
+}
