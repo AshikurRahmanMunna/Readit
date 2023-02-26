@@ -1,14 +1,14 @@
 {
   "name": "Readit",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Readit, A URL management software that provides various ways to manage and remember necessary URLs",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "watch": "nodemon --exec electron .",
     "reset": "git reset --hard",
-    "build": "electron-builder --win zip msi",
-    "release": "electron-builder --win zip msi --publish always",
+    "build": "electron-builder --win",
+    "release": "electron-builder --win --publish always",
     "win-cert": "electron-builder create-self-signed-cert -p armunna"
   },
   "repository": "https://github.com/AshikurRahmanMunna/Readit",
@@ -19,7 +19,7 @@
     "Manage URL"
   ],
   "author": "AshikurRahmanMunna",
-  "license": "CC0-1.0",
+  "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "electron": "^9.0.0",
@@ -29,6 +29,10 @@
     "tailwindcss": "^3.2.7"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
+    "electron-log": "^5.0.0-beta.16",
+    "electron-logger": "^0.0.3",
+    "electron-updater": "^5.3.0",
     "electron-window-state": "^5.0.3"
   },
   "build": {
@@ -42,7 +46,11 @@
       "target": "zip"
     },
     "win": {
-      "target": "zip",
+      "target": [
+        "zip",
+        "msi",
+        "nsis"
+      ],
       "certificateFile": "./private/armunna.pfx",
       "certificatePassword": "",
       "publisherName": "armunna"

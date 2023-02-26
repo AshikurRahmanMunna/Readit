@@ -4,6 +4,8 @@ const appMenu = require("./menus");
 const path = require("path");
 const windowStateKeeper = require("electron-window-state");
 const readItem = require("./readItem");
+const updater = require("./updater");
+require("dotenv").config();
 
 let mainWindow;
 
@@ -29,6 +31,8 @@ function createWindow() {
       nodeIntegration: true,
     },
   });
+
+  setTimeout(updater, 3000);
 
   appMenu(mainWindow.webContents);
 
