@@ -8,6 +8,7 @@
     "watch": "nodemon --exec electron .",
     "reset": "git reset --hard",
     "build": "electron-builder --win zip msi",
+    "release": "electron-builder --win zip msi --publish always",
     "win-cert": "electron-builder create-self-signed-cert -p armunna"
   },
   "repository": "https://github.com/AshikurRahmanMunna/Readit",
@@ -33,6 +34,9 @@
   "build": {
     "appId": "com.armunna.readit",
     "copyright": "Copyright Ameliasoft",
+    "publish": {
+      "provider": "github"
+    },
     "mac": {
       "category": "public.app-category.productivity",
       "target": "zip"
