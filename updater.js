@@ -24,4 +24,19 @@ module.exports = () => {
         }
       });
   });
+
+  autoUpdater.on("update-downloaded", () => {
+    dialog
+      .showMessageBox({
+        type: "info",
+        title: "Update Ready",
+        message: "Install & Restart Now?",
+        buttons: ["Yes", "Later"],
+      })
+      .then((r) => {
+        if (r.response === 0) {
+          autoUpdater.quitAndInstall(false, true);
+        }
+      });
+  });
 };
