@@ -1,6 +1,6 @@
 {
   "name": "Readit",
-  "version": "1.2.0",
+  "version": "1.0.1",
   "description": "Readit, A URL management software that provides various ways to manage and remember necessary URLs",
   "main": "main.js",
   "scripts": {
