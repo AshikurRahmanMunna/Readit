@@ -4,10 +4,10 @@
   "description": "Readit, A URL management software that provides various ways to manage and remember necessary URLs",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "node init && electron .",
     "watch": "nodemon --exec electron .",
     "reset": "git reset --hard",
-    "build": "electron-builder --win",
+    "build": "node init && electron-builder --win",
     "release": "electron-builder --win --publish always",
     "win-cert": "electron-builder create-self-signed-cert -p armunna"
   },
